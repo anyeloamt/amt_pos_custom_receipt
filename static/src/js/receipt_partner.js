@@ -8,15 +8,11 @@ patch(PosStore.prototype, {
         const data = super.getReceiptHeaderData(...arguments);
         const order = this.get_order();
 
-        let formattedDate = '';
-
-        if (order.date_order) {
-            formattedDate = order.date_order.toFormat("dd/MM/yyyy hh:mm:ss a");
-        }
+        const formattedDate = order.date_order?.toFormat("dd/MM/yyyy hh:mm:ss a") || '';
 
         return {
             ...data,
-            partner: this.get_order().get_partner(),
+            partner: order.get_partner(),
             order_date: formattedDate,
             order_name: order.name,
         };
