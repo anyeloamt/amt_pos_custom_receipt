@@ -15,7 +15,8 @@
     'license': 'OPL-1',
      'assets': {
         'point_of_sale._assets_pos': [
-            'amt_custom_pos_receipt/static/src/**/*',
+            'amt_custom_pos_receipt/static/src/js/**/*.js',
+            'amt_custom_pos_receipt/static/src/xml/**/*.xml',
         ],
     },
 }
